@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace MidtermExam.Prob03
@@ -50,8 +51,31 @@ namespace MidtermExam.Prob03
         /// <returns>คืนค่า true หากทำการย้ายสำเร็จ หรือ false หากไม่สามารถย้ายได้ (เช่น null, ไม่อยู่ในคิว, ผู้เล่นคนเดียวกัน)</returns>
         public bool SwapQueue(LinkedList<Player> turnQueue, Player targetPlayer, Player afterPlayer)
         {
+            if (turnQueue == null || targetPlayer == null || afterPlayer == null)
+            {
+                return false;
+            }
+
+            if (!turnQueue.Contains(targetPlayer) || !turnQueue.Contains(afterPlayer))
+            {
+                return false;
+            }
+
+            if (turnQueue.Count < 2)
+            {
+                return false;
+            }
+
+            if (targetPlayer == afterPlayer)
+            {
+                return false;
+            }
+
+            turnQueue.Remove(targetPlayer);
+            turnQueue.AddAfter(turnQueue.Find(afterPlayer), targetPlayer);
+
             // TODO: ให้นักศึกษา Implement การจัดการสลับลำดับของ Node ใน LinkedList<Player>
-            return false;
+            return true;
         }
 
 
