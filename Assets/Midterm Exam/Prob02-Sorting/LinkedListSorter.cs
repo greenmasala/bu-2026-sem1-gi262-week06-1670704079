@@ -14,29 +14,50 @@ namespace MidtermExam.Prob02
         /// <returns>LinkedList ที่ได้รับการเรียงลำดับจากน้อยไปมากแล้ว</returns>
         public LinkedList<int> SortAscending(LinkedList<int> list)
         {
-            LinkedList<int> sortedList = new LinkedList<int>();
+            if (list == null || list.Count <= 1)
+            {
+                return list;
+            }
 
-            //while (j != null)
-            //{
-            //    LinkedListNode<int> i = list.First;
-            //    LinkedListNode<int> j = i.Next;
-            //}
-            //var current = list.First;
-            //var next = current.Next;
+            //var i = list.First;
+            //var j = i.Next;
+            //int i = 0;
 
-            //while (next != null)
+            //while (i)
             //{
-            //    if (current.Value > next.Value)
+            //    var temp = list.Find(i);
+            //    var minIndex = list.First;
+
+            //    if (j.Value < minIndex.Value)
             //    {
-            //        var temp = current;
-            //        current = next;
-            //        next = temp;
+            //        i = j;
+            //        j = i.Next;
             //    }
-            //    next = current.Next;
-            //}
-          
-            // TODO: Implement sorting algorithm for LinkedList<int> (Ascending)
-            return list;
+            //    j = i.Next;
+            //} 
+
+
+                //while (j != null)
+                //{
+                //    LinkedListNode<int> i = list.First;
+                //    LinkedListNode<int> j = i.Next;
+                //}
+                //var current = list.First;
+                //var next = current.Next;
+
+                //while (next != null)
+                //{
+                //    if (current.Value > next.Value)
+                //    {
+                //        var temp = current;
+                //        current = next;
+                //        next = temp;
+                //    }
+                //    next = current.Next;
+                //}
+
+                // TODO: Implement sorting algorithm for LinkedList<int> (Ascending)
+                return list;
         }
 
         /// <summary>
